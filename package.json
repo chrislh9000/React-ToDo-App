@@ -1,0 +1,36 @@
+{
+  "name": "react-todo-app",
+  "version": "1.0.0",
+  "description": "react to-do app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack",
+    "dev" : "webpack-dev-server --content-base build/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrislh9000/React-ToDo-App.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Chris Hemm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrislh9000/React-ToDo-App/issues"
+  },
+  "homepage": "https://github.com/chrislh9000/React-ToDo-App#readme",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "webpack": "^2.7.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.9.1"
+  }
+}
