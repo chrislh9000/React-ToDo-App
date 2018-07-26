@@ -13,7 +13,7 @@ class ToDo extends React.Component {
   render() {
     return(
       <div>
-      <li><button>X</button>{this.props.task.completed? <strike>{this.props.task.taskText}</strike>: this.props.task.taskText}</li>
+      <li className="to-do"><button className="fin-input btn-sm btn btn-success">X</button>{this.props.task.completed? <strike>{this.props.task.taskText}</strike>: this.props.task.taskText}</li>
       </div>
     )
   }
@@ -28,7 +28,7 @@ class TodoList extends React.Component {
   render() {
     return(
       <ul>
-       {dummyData.map((todo) => (
+       {this.props.todos.map((todo) => (
         <ToDo task={todo} />
       ))}
       </ul>
@@ -42,8 +42,8 @@ class InputLine extends React.Component {
   render() {
     return(
       <div>
-      <input type="text" placeholder="Write ToDo..." />
-      <input type="submit" value="submit"/>
+      <input className="input-task" type="text" placeholder="Write ToDo..." />
+      <input className="btn btn-primary" type="submit" value="submit"/>
       </div>
     )
   }
@@ -54,14 +54,21 @@ class InputLine extends React.Component {
 class TodoApp extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      todos: [],
+    }
   }
   render() {
     return(
       <div>
       <InputLine />
-      <TodoList />
+      <TodoList todos={this.state.todos} />
       </div>
     )
+  }
+  //componentDidMount to handle ajax requests that take time to process
+  componentDidMount() {
+    this.setState({todos: dummyData});
   }
 
 }
