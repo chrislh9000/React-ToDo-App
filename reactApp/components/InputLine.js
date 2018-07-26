@@ -6,7 +6,7 @@ class InputLine extends React.Component {
     return(
       <div>
       <input className="input-task" type="text" placeholder="Write ToDo..." />
-      <input className="btn btn-primary" type="submit" value="submit"/>
+      <input onClick={() => this.props.submit('Test Task')} className="btn btn-primary" type="submit" value="submit"/>
       </div>
     )
   }

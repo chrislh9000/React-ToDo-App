@@ -2,9 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TodoApp from './components/ToDoApp'
 
-const dummyData = [{taskText: 'Clean Dishes', completed: true},
-                  {taskText: 'Wash Dishes', completed: false}, {taskText: 'Watch TV', completed: false},
-                  {taskText: 'Code', completed: false}];
 
 // //To do class
 // class ToDo extends React.Component {

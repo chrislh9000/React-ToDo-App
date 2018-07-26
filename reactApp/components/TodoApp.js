@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import TodoList from './TodoList.js'
 import InputLine from './InputLine.js'
 
-const dummyData = [{taskText: 'Clean Dishes', completed: true},
+let dummyData = [{taskText: 'Clean Dishes', completed: true},
 {taskText: 'Wash Dishes', completed: false}, {taskText: 'Watch TV', completed: false},
 {taskText: 'Code', completed: false}];
 
@@ -15,10 +15,17 @@ class TodoApp extends React.Component {
       todos: [],
     }
   }
+  addTodo(toDo) {
+    dummyData.push({taskText: toDo, completed: false});
+    this.setState({
+      todos: dummyData,
+    })
+  }
+
   render() {
     return(
       <div>
-      <InputLine />
+      <InputLine submit={(toDo) => this.addTodo(toDo)} />
       <TodoList todos={this.state.todos} />
       </div>
     )
