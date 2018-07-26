@@ -10,7 +10,7 @@ class TodoList extends React.Component {
     return(
       <ul>
        {this.props.todos.map((todo) => (
-        <ToDo task={todo} />
+        <ToDo xClick={()=>this.props.todoClickX(0)} task={todo} />
       ))}
       </ul>
     )

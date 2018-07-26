@@ -6,7 +6,7 @@ class ToDo extends React.Component {
   render() {
     return(
       <div>
-      <li className="to-do"><button className="fin-input btn-sm btn btn-success">X</button>{this.props.task.completed? <strike>{this.props.task.taskText}</strike>: this.props.task.taskText}</li>
+      <li className="to-do"><button onClick={()=>this.props.xClick(0)} className="fin-input btn-sm btn btn-success">X</button>{this.props.task.completed? <strike>{this.props.task.taskText}</strike>: this.props.task.taskText}</li>
       </div>
     )
   }
