@@ -7,6 +7,11 @@ let dummyData = [{taskText: 'Clean Dishes', completed: true},
 {taskText: 'Wash Dishes', completed: false}, {taskText: 'Watch TV', completed: false},
 {taskText: 'Code', completed: false}];
 
+let dataText = dummyData.map((todo) => {
+  return todo.taskText
+})
+
+
 
 class TodoApp extends React.Component {
   constructor(props) {
@@ -30,15 +35,16 @@ class TodoApp extends React.Component {
   }
 
   toggleToDo(index) {
-    let task = dummyData.indexOf(index)
+    let task = dataText.indexOf(index)
     dummyData.splice(task, 1, {taskText: task.taskText, completed: !task.completed})
   }
 
   render() {
+
     return(
       <div>
       <InputLine submit={(toDo) => this.addTodo(toDo)} />
-      <TodoList todoClickX={()=> this.removeTodo(0)} todos={this.state.todos} />
+      <TodoList taskText={dataText} todoClickText={(index) => this.toggleToDo(index)} todoClickX={(index)=> this.removeTodo(index)} todos={this.state.todos} />
       </div>
     )
   }
