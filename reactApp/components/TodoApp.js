@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TodoList from './TodoList.js'
 import InputLine from './InputLine.js'
+import axios from 'axios'
 
+const dbUrl = 'http://localhost:3000/db';
 let dummyData = [{taskText: 'Clean Dishes', completed: true},
 {taskText: 'Wash Dishes', completed: false}, {taskText: 'Watch TV', completed: false},
 {taskText: 'Code', completed: false}];
@@ -25,6 +27,14 @@ class TodoApp extends React.Component {
     this.setState({
       todos: dummyData,
     })
+    
+    axios.post("/db/add")
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   removeTodo(index) {

@@ -25,8 +25,12 @@ class InputLine extends React.Component {
   render() {
     return(
       <div>
-      <input onChange={(event)=> this.handleTyping(event)} value={this.state.typedText} className="input-task" type="text" placeholder="Write ToDo..." />
-      <input onClick={() => this.handleSubmit()} className="btn btn-primary" type="submit" value="submit"/>
+      <form method="POST" action="/db/add">
+      <div className="form-group">
+      <input className="input-task form-control" name="taskText" onChange={(event)=> this.handleTyping(event)} value={this.state.typedText} type="text" placeholder="Write ToDo..." /><br/><br/>
+      <button method="POST" action="/db/add" onClick={() => this.handleSubmit()} className="btn btn-primary">Submit</button>
+      </div>
+      </form>
       </div>
     )
   }
