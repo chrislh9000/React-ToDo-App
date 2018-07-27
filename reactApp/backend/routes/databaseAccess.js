@@ -3,7 +3,7 @@ const router = express.Router();
 const TodoItem = require('../models/TodoItem')
 
 router.post('/add', (req, res) => {
-  var task = 'New Task'
+  var task = req.body.taskText;
   const testTodo = new TodoItem({
   task: task
 });

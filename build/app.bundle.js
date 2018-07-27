@@ -2732,7 +2732,7 @@ var InputLine = function (_React$Component) {
             { className: 'form-group' },
             _react2.default.createElement('input', { className: 'input-task form-control', name: 'taskText', onChange: function onChange(event) {
                 return _this2.handleTyping(event);
-              }, value: this.state.typedText, type: 'text', placeholder: 'Write ToDo...' }),
+              }, value: 'hey', type: 'text', placeholder: 'Write ToDo...' }),
             _react2.default.createElement('br', null),
             _react2.default.createElement('br', null),
             _react2.default.createElement(

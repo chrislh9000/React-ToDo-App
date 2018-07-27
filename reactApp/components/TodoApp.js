@@ -27,10 +27,11 @@ class TodoApp extends React.Component {
     this.setState({
       todos: dummyData,
     })
-    
+
     axios.post("/db/add")
     .then(function (response) {
       console.log(response);
+      this.setState({ todos: this.state.todos.concat(response.data)});
     })
     .catch(function (error) {
       console.log(error);
